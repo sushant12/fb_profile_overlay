@@ -11,5 +11,5 @@ Clone the repo, run bundle install. Create a new .env file and add your fb app i
 WARNING
 =============
 
-I was planning to add delete the photo once the user click on signout but I got too lazy.
+I was planning to add delete the photo from the server once the user click on signout but I got too lazy.
 
