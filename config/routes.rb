@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
 
   root to: 'visitors#index'
-
+  post 'visitors/store'
 end

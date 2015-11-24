@@ -50,7 +50,7 @@ class VisitorsController < ApplicationController
     @access_token = session[:user_info]['credentials']['token']
     @graph_api = Koala::Facebook::API.new(@access_token)
     begin
-      sus = @graph_api.put_picture("#{Rails.root}/public/image/#{session[:user_id]}.png", '', {:message => "Vote for @Maggie Doyne Everyday @ www.heroes.cnn.com \n Visit http://fuitter.com to show your support"}, "me")
+      sus = @graph_api.put_picture("#{Rails.root}/public/image/#{session[:user_id]}.png", '', {:message => "Vote for @Maggie Doyne Everyday @ www.heroes.cnn.com \n Visit http://fb-profile-overlay.herokuapp.com/ to show your support"}, "me")
     rescue => e
       return redirect_to root_url, :alert => "Sorry, something went wrong. Make sure You have accepted our every permission"
     end
