@@ -220,6 +220,7 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rmagick (2.15.4)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -325,6 +326,7 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  rmagick
   rspec-rails
   rubocop
   sass-rails (~> 5.0)

@@ -1,2 +1,36 @@
-<h1>Visitors#index</h1>
-<p>Find me in app/views/visitors/index.html.erb</p>
+<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+  <div class="image text-center  main-image">
+    <% if session[:user_info] %>
+      <%= image_tag("/image/#{session[:user_id]}.png", class: "img-responsive") %><br>
+      <%= form_tag({action: 'store'}) do %>
+        <%= submit_tag("Upload To Facebook",class: "btn btn-info") %>
+        <%= link_to 'Signout', signout_path, class: "btn btn-primary" %>
+      <% end %>
+    <% else %>
+      <%= image_tag('default.png', class:  "img-responsive") %><br>
+      <%= link_to 'Login from Facebook', signin_path, class: "btn btn-primary" %>
+    <% end %>
+
+   </div>
+
+   <!-- <div class="fb-like like-plugin" data-href="http://fuitter.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+   <a href="https://twitter.com/share" class="twitter-share-button like-plugin" data-url="http://www.fuitter.com" data-text="Vote for Maggie Doyne @ www.heroes.cnn.com Visit www.fuitter.com to show your support" data-via="sushantbaj">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+Tweet</a> -->
+</div>
+<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 ">
+  <p class="text-center support">Supporters<br/><br/><b class="total"><%= User.count %></b> </p>
+  <p class="text-center support">About Maggie<br/><br/>
+    Maggie Doyne is an American philanthropist who has been recognized for her work helping to develop an orphanage and school in the Kopila Valley of Nepal after spending time in that country during a gap year after completing high school
+   </p>
+   <p>
+    Visit <%= link_to("CNN Heroes", "http://heroes.cnn.com/") %> to vote for maggie <br>
+    Supported by: <%= link_to("UNX", "http://livingunx.com/") %><br>
+    Developed By: <%= link_to("Sushant Bajracharya", "https://plus.google.com/102164802283352741214/posts") %><br>
+   </p>
+   <p>
+    <%= link_to("Privacy/Policy", 'needtochange') %>
+   </p>
+</div>
+
